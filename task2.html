@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Country Flag Selector</title>
+  <style>
+    #flag {
+      width: 150px;
+      height: 100px;
+      margin-top: 20px;
+      border: 1px solid #ccc;
+      object-fit: cover;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <select id="country">
+    <option value="">Select a country</option>
+    <option value="jordan">Jordan</option>
+    <option value="usa">USA</option>
+    <option value="france">France</option>
+    <option value="germany">Germany</option>
+    <option value="italy">Italy</option>
+  </select>
+
+  <img id="flag" src="" alt="Flag">
+
+  <script>
+    const country = document.getElementById('country');
+    const flag = document.getElementById('flag');
+
+    const flags = {
+      jordan: "https://flagcdn.com/w320/jo.png",
+      usa: "https://flagcdn.com/w320/us.png",
+      france: "https://flagcdn.com/w320/fr.png",
+      germany: "https://flagcdn.com/w320/de.png",
+      italy: "https://flagcdn.com/w320/it.png"
+    };
+
+    country.addEventListener('change', () => {
+      const selected = country.value;
+      if (flags[selected]) {
+        flag.src = flags[selected];
+        flag.style.display = "block";
+      } else {
+        flag.style.display = "none";
+      }
+    });
+  </script>
+
+</body>
+</html>

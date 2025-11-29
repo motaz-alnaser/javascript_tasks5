@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Show/Hide Content</title>
+  <style>
+    .accordion {
+      border: 1px solid #ccc;
+      margin-bottom: 10px;
+      width: 400px;
+    }
+
+    .title {
+      background: #f0f0f0;
+      padding: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .content {
+      padding: 10px;
+      display: none;
+    }
+
+    .toggle {
+      color: purple;
+      text-decoration: underline;
+      cursor: pointer;
+      font-weight: normal;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="accordion">
+    <div class="title">
+      What is lorem ipsum?
+      <span class="toggle">Show</span>
+    </div>
+    <div class="content">
+      Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts.
+    </div>
+  </div>
+
+  <div class="accordion">
+    <div class="title">
+      Why do we use it?
+      <span class="toggle">Show</span>
+    </div>
+    <div class="content">
+      It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+    </div>
+  </div>
+
+  <div class="accordion">
+    <div class="title">
+      Where does it come from?
+      <span class="toggle">Show</span>
+    </div>
+    <div class="content">
+      Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature.
+    </div>
+  </div>
+
+  <script>
+    const accordions = document.querySelectorAll('.accordion');
+
+    accordions.forEach(acc => {
+      const toggle = acc.querySelector('.toggle');
+      const content = acc.querySelector('.content');
+
+      toggle.addEventListener('click', () => {
+        if (content.style.display === "none" || content.style.display === "") {
+          content.style.display = "block";
+          toggle.textContent = "Hide";
+        } else {
+          content.style.display = "none";
+          toggle.textContent = "Show";
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

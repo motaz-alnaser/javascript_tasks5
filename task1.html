@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hover Event</title>
+  <style>
+    .card {
+      width: 300px;
+      padding: 16px;
+      margin: 10px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background: #fff;
+      transition: 0.2s;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">Hello World</div>
+  
+
+  <script>
+    const cards = document.querySelectorAll('.card');
+    
+    cards.forEach(card => {
+      card.addEventListener('mouseover', () => {
+        card.style.backgroundColor = 'yellow';
+        card.style.fontWeight = 'bold';
+      });
+
+      card.addEventListener('mouseout', () => {
+        card.style.backgroundColor = '';
+        card.style.fontWeight = '';
+      });
+    });
+  </script>
+
+</body>
+</html>
